@@ -12,3 +12,5 @@ You can try to run this game in browser with this:
 > Not displaying text correctly or not playing background video at the start.
 > 
 > I'm not going to fix them, that is not the goal of this project.
+> 
+> For full experience consider downloading the windows version.
