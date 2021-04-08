@@ -5,15 +5,12 @@ public class GameEnd : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private GameObject panel;
-
     [SerializeField] private Text winnerOut, winnerIn;
-
     public void CheckMate(string winner)
     {
         PanelShow();
         ShowText("Winner is " + winner.ToUpper());
     }
-
     public void StaleMate(string stalemateBy)
     {
         PanelShow();
@@ -25,6 +22,5 @@ public class GameEnd : MonoBehaviour
         winnerOut.text = text;
         winnerIn.text = text;
     }
-
     private void PanelShow() => panel.SetActive(true);
 }

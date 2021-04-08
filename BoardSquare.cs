@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.U2D;
 
@@ -17,7 +18,6 @@ public class BoardSquare : MonoBehaviour
     }
 
     private void Start() => StartSquareColor();
-
     private void StartSquareColor()
     {
         if (square.y.Even() && square.x.Even())
@@ -30,15 +30,10 @@ public class BoardSquare : MonoBehaviour
             squareColor = board.whiteSqaure;
         SetDefaultSquareColor();
     }
-
     public void SetDefaultSquareColor() => spriteRenderer.color = squareColor;
-
     public void HighlightSquare() => spriteRenderer.color = squareColor.Blend(board.highLightSqaure, 30);
-
     public void SetBoard(Board board) => this.board = board;
-
     public Board GetBoard => board;
-
     public void SetSquare(int y, int x)
     {
         square.y = y;
@@ -63,18 +58,14 @@ public class BoardSquare : MonoBehaviour
         if (Empty) return false;
         return piece.color != pieceColor;
     }
-
     public bool AllyPiece(PieceColor pieceColor)
     {
         if (Empty) return false;
         return piece.color == pieceColor;
     }
-
     public bool AllyPiece() => AllyPiece(board.PieceMove);
-
     public string PieceName => piece.GetType().ToString();
     public bool ReFocus => board.PieceMove == piece.color;
-
     public void HandlePieceMovement() => board.HandlePieceMovement(square.y, square.x);
 
     public bool Focused => board.PieceFocused();
@@ -85,7 +76,6 @@ public class BoardSquare : MonoBehaviour
         piece = null;
         pieceSpriteRenderer.sprite = null;
     }
-
     public Piece GetPiece => piece;
     public float TransformX => transform.position.x;
     public float TransformY => transform.position.y;
